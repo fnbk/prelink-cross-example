@@ -6,7 +6,13 @@
 bin_arm/*
 !bin_arm/.gitkeep
 
+bin_x86/*
+!bin_x86/.gitkeep
+
 cache/*
 !cache/.gitkeep
+
+arm-2012.03/share/
+world
 
 
