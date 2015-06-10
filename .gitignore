@@ -14,5 +14,9 @@ arm-2012.03/share
 .project
 .settings/
 
+world/lib_x86/*
+!world/lib_x86/.gitkeep
 
+world/lib_arm/*
+!world/lib_arm/.gitkeep
 
