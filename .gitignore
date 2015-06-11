@@ -16,3 +16,41 @@ arm-2012.03/share/
 world
 
 
+
+
+cache/*
+!cache/.gitkeep
+
+bin_arm/*
+!bin_arm/.gitkeep
+
+bin_x86/*
+!bin_x86/.gitkeep
+
+arm-2012.03/share
+
+# settings
+.cproject
+.project
+.settings/
+file.txt
+
+#
+# ignore sysroot files
+#
+
+arm-2012.03/arm-none-linux-gnueabi/libc/etc/prelink.conf
+
+arm-2012.03/arm-none-linux-gnueabi/libc/etc/cache/*
+!arm-2012.03/arm-none-linux-gnueabi/libc/etc/cache/.gitkeep
+
+arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/include/*
+!arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/include/.gitkeep
+arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/bin/*
+!arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/bin/.gitkeep
+arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/lib/*
+!arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/lib/.gitkeep
+
+
+
+
