@@ -1,19 +1,9 @@
-## clone
-
-```
-git clone https://github.com/fnbk/prelink-cross-example.git
-```
-
-## master
-
-```
-prelink-cross-example: git checkout master
-```
+# x86
 
 ## compile
 
 ```
-prelink-cross-example: make
+prelink-cross-example: make x86
 ```
 
 ## run
@@ -74,14 +64,29 @@ hello world
 ```
 
 
-## prelink arm
+# ARM
+
+## compile
 
 ```
-prelink-cross-example: make prelink_arm
+make arm
+```
+
+## prelink
+
+```
+make prelink_arm
 ```
 
 ```
-...
-prelink: bin_arm/hello: Could not parse `/usr/local/sbin//prelink-rtld: error while loading shared libraries: ld-linux.so.3'
+Laying out 3 libraries in virtual address space 41000000-50000000
+Assigned virtual address space slots for libraries:
+/lib/ld-linux.so.3                                           41000000-4102a968
+/lib/libc.so.6                                               41030000-41181968
+/lib/libgcc_s.so.1                                           41188000-411af748
+Prelinking /lib/ld-2.15.so
+Prelinking /lib/libc-2.15.so
+Prelinking /lib/libgcc_s.so.1
+Prelinking /usr/local/bin/hello
 ```
 
