@@ -25,7 +25,7 @@ prelink_x86:
 	
 prelink_arm:
 	cp prelink_arm.conf arm-2012.03/arm-none-linux-gnueabi/libc/etc/prelink.conf
-	PATH=/usr/local/sbin prelink --verbose --root=arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;/usr/lib;" -h /usr/local/bin/hello
+	PATH=/usr/local/sbin prelink --verbose --root=/home/developer/workspace/eclipse/prelink-cross-example/arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so
 
 
 #
@@ -37,6 +37,5 @@ prelink_x86_undo:
 	PATH=/usr/local/sbin prelink --verbose --undo --all
 	
 prelink_arm_undo:
-	PATH=/usr/local/sbin prelink --verbose --undo --root=arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;/usr/lib;" -h /usr/local/bin/hello
-	PATH=/usr/local/sbin prelink --verbose --undo --all
+	PATH=/usr/local/sbin prelink --verbose --undo --root=arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so
 
