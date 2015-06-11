@@ -20,3 +20,14 @@ world/lib_x86/*
 world/lib_arm/*
 !world/lib_arm/.gitkeep
 
+file.txt
+
+#
+# ignore sysroot files
+#
+
+arm-2012.03/arm-none-linux-gnueabi/libc/etc/cache/
+arm-2012.03/arm-none-linux-gnueabi/libc/etc/prelink.conf
+arm-2012.03/arm-none-linux-gnueabi/libc/etc/prelink_arm.conf
+arm-2012.03/arm-none-linux-gnueabi/libc/usr/local/
+

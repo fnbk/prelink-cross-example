@@ -7,8 +7,7 @@ prelink-cross-example: git checkout shared-library
 ## compile
 
 ```
-prelink-cross-example: make
-prelink-cross-example/world: make
+make
 ```
 
 
@@ -38,7 +37,7 @@ world
 ## prelink x86 (host system)
 
 ```
-prelink-cross-example: make prelink_x86
+make prelink_x86
 ```
 
 ```
@@ -76,12 +75,44 @@ world
 
 
 
-## prelink-cross-example: make prelink_arm
+# prelink-cross-example
+
+```
+make prelink_arm
+```
 
 
 ```
-...
-prelink: bin_arm/hello: Could not parse `/usr/local/sbin//prelink-rtld: error while loading shared libraries: ld-linux.so.3'
+prelink: /lib/libdl-2.15.so is not present in any config file directories, nor was specified on command line
+prelink: /lib/libc-2.15.so is not present in any config file directories, nor was specified on command line
+prelink: /lib/libgcc_s.so.1 is not present in any config file directories, nor was specified on command line
+prelink: /lib/ld-2.15.so is not present in any config file directories, nor was specified on command line
+Laying out 1 libraries in virtual address space 41000000-50000000
+Assigned virtual address space slots for libraries:
+/usr/local/lib/libworld.so                                   41000000-410086d0
+prelink: Could not prelink /usr/lib/bin/localedef because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/POSIX_V6_ILP32_OFFBIG because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/zdump because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/POSIX_V7_ILP32_OFF32 because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/local/lib/libworld.so because its dependency /lib/libgcc_s.so.1 could not be prelinked
+prelink: Could not prelink /usr/local/bin/hello because its dependency /usr/local/lib/libworld.so could not be prelinked
+prelink: Could not prelink /usr/lib/bin/pldd because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/zic because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/sprof because its dependency /lib/libdl.so.2 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/POSIX_V6_ILP32_OFF32 because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/gdbserver because its dependency /lib/libdl.so.2 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/XBS5_ILP32_OFFBIG because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/XBS5_ILP32_OFF32 because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/makedb because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/pcprofiledump because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/iconv because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/locale because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/gencat because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/POSIX_V7_ILP32_OFFBIG because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/rpcgen because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/getent because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/getconf because its dependency /lib/libc.so.6 could not be prelinked
+prelink: Could not prelink /usr/lib/bin/iconvconfig because its dependency /lib/libc.so.6 could not be prelinked
 ```
 
 
