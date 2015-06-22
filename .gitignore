@@ -13,7 +13,6 @@ cache/*
 !cache/.gitkeep
 
 arm-2012.03/share/
-world
 
 
 
