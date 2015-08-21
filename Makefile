@@ -1,4 +1,6 @@
 
+ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 all: x86 arm
 
 #
@@ -25,7 +27,7 @@ prelink_x86:
 	
 prelink_arm:
 	cp prelink_arm.conf arm-2012.03/arm-none-linux-gnueabi/libc/etc/prelink.conf
-	PATH=/usr/local/sbin prelink --verbose --root=/home/developer/workspace/eclipse/prelink-cross-example/arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so
+	PATH=/usr/local/sbin prelink --verbose --root=$(ROOT_DIR)/arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so /usr/local/lib/libworld.so
 
 
 #
@@ -37,5 +39,5 @@ prelink_x86_undo:
 	PATH=/usr/local/sbin prelink --verbose --undo --all
 	
 prelink_arm_undo:
-	PATH=/usr/local/sbin prelink --verbose --undo --root=arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so
+	PATH=/usr/local/sbin prelink --verbose --undo --root=$(ROOT_DIR)/arm-2012.03/arm-none-linux-gnueabi/libc --cache-file=/etc/cache/prelink.cache --config-file=/etc/prelink.conf --ld-library-path="/usr/local/lib;/lib;" -h /usr/local/bin/hello /lib/libc.so.6 /lib/libgcc_s.so.1 /lib/ld-2.15.so /usr/local/lib/libworld.so
 
